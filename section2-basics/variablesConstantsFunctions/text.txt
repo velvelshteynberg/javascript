@@ -1,0 +1,47 @@
+ways to run js
+1-You can get js loaded by putting stuff in between script tags in html
+2- <script src = "assests/script/app.js"></script>- page cant load first. You can put the script tag at the end of the body
+
+
+Variable and Constant
+These are data containers
+Use Let name = 'your_choice';
+if you reassign a value to your variable later you dont need to reuse let
+Use Const: should be used more often
+You cant reuse a Const
+
+Use camelCase for variable name userName
+You can use digits, $, underscores at the beginning
+Dont use snake_case (as in ruby)
+cant use variable name starting with digits e.g. 2name
+cant use other special characters besides _ $
+can use let variable name
+
+Operators are syntax features that let you manipulate values e.g. +-*/. also % (returns remainder) ** (exponentation), = (assingment Operator)
+
+Data types
+numbers e.g. 2, -3, 22.2342529(FLOATS)
+strings 'hi', 'hello'
+
+plus works in js for combinining strings too
+
+backticks `` allows for template literal with ${} syntax e.g.       `${hello}`
+
+if you dont want white space in your string put both half of the strings into quotes and add a + operator
+
+if you want a line break add \n to the middle of the string or a template literal
+
+\ means that js should ignore something 
+
+functions are 'code on demand'
+
+you could return something in a function 
+
+let and const have to be declared before you use them. Functions though can be defined after they have been called 
+
+variables within a block ( {} ) cant be accesed outside of the block while variables outside a block can be accessed inside. FUnctions have access to what is around them.
+
+Shadowed variable is when you reuse a variable name within a function. The function assumes the variable of the locally defined variable by default unless it is forced to understand the value of the globally defined one. 
+
+Nothing gets excecuted after a return statement. you cant have a second return statment either. 
+
