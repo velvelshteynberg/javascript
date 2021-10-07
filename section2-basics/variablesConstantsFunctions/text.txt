@@ -45,3 +45,9 @@ Shadowed variable is when you reuse a variable name within a function. The funct
 
 Nothing gets excecuted after a return statement. you cant have a second return statment either. 
 
+all data passed from html to js is always a string. parseInt and parseFloat convert a string into a number. you can also do + +userInput.value and the second plus will automatically parseInt the string
+
+convert a number to a string is with a method .toString()
+
++ is the only operator that words for strings and numbers. */- work only for numbers and not strings
+
