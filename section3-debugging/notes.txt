@@ -1,0 +1,14 @@
+use auto format and use shortcuts
+
+explore extensions
+
+MDN is the JS go to space
+
+ECMAScript (the language "behind" JavaScript) is under active development and the current progress and active standard is of course documented.
+
+User chrome debugging tool by using break points = you pause the code to figure out step by step what is going on
+you can do conditional break points or event listener break points (check event listener mouse click)
+You can also put updates into the source option in the browser
+
+Watch expression 
+Call stack
