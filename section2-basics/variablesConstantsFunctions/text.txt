@@ -51,3 +51,40 @@ convert a number to a string is with a method .toString()
 
 + is the only operator that words for strings and numbers. */- work only for numbers and not strings
 
+comments in js: //this is for one line. /**/ is for many lines (block comment)
+
+Couple of cool operators 
+
+current = current + 15; is also current += 15/current *= 15/current -= 15/ 
+
+current = current + 1 is also the same as current ++ (increment operator)/ current -- (decrement operator)
+
+++current and current ++ will both increment current by one. differece is if ++current the return is the edited current vs current++ the return is the unedited current: the only difference is the return 
+
+
+
+Data types
+
+Booleans: they are either true or false
+
+Objects: They group data with {} . They have key value paris. They help group related data
+To access object data use obejct = object = {key: value}. object.key. These are called properties.
+
+Arrays: created with []. They are a list of data. array of integers/floats/objects/. Seperated commas
+To access array values you have to have the followign syntax array = []; array.[2]/array.[0]
+
+Special Values
+Unefined is the default value of uninitialized variables. Declaring is calling the variable name but initializing is assigning a value to it
+
+Null is never assumed. You have to set the value to null (reset/clear the value)
+
+Nan = not a number. You will get this error if you try to multiply a string. It 
+
+
+typeof is a method in js to figure out the type of an item typeof('mas')/typeof(22)/typeof null = object/type of NaN = 
+
+scripts have to be run AFTER the html file = at the very end 
+
+By writing defer into the script tag you tell the browser to continue loading but not to pause parsing the html (it should simultaneously continue parsing the html) but only excecute the scripts after finishing parsing the html. You can also use the word async but the difference is that the script executes before the rest of the html is parsed and parsing will happen only after the script is loaded. Another difference is that with async a later script and can be excecuted first if it is loaded first however by defer the browser guarantess that the first script will get loaded first. If you have a local script asysnc and defer are ignored
+
+
