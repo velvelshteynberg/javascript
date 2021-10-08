@@ -10,3 +10,25 @@ equality operator is a double ==
 
 ! checks if thing is not true
 
+youre able to nest an if condition within an if condition 
+
+2 objects will always yield a result false when compared even if the key/value pair is the same. The same is true for arrays
+
+the and operator (to require 2 conditions) has a syntax of && and the or operator has the || syntax. You are able to group conditions in parenthesis to group conditions the way that you want them
+
+if you just put return then the following lines of code are not executed
+
+Operator precedence 
+Bedmas is followed for mathematical calculations
+And operator has a higher precedence than Or
+
+
+JS tries to convert strings into booleans this is called truty and falsy operators without explicitly stating comparisons
+
+empty strings are treated as false while a non empty string is treated as true ''(false)/'a'(true) if ('') vs if ('a')
+number 0 is treated as false while all other positive and negative numbers are equal to true
+all objects and arrays are treated as true even if they are empty
+Null Undefined and NaN are always treated as false
+! mean NOT
+
+Conversion(this converts either implicitly or explicitly) vs coercion (forces to convert to a true/false value: this is done implicitly)
