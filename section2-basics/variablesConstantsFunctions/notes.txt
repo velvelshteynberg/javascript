@@ -1,0 +1,12 @@
+equality operator is a double == 
+
+!= this checks for value inequality 2 == "2" is true
+
+===/!== checks for value and type equality/inequality 2 === '2' is false because value is the same but data type is not
+
+> & < this can be used for numbers and strings(this is checked lexiographically e.g. f is later in the ABC's than a)
+
+>= % <= is another operator
+
+! checks if thing is not true
+
