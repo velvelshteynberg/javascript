@@ -32,3 +32,7 @@ Null Undefined and NaN are always treated as false
 ! mean NOT
 
 Conversion(this converts either implicitly or explicitly) vs coercion (forces to convert to a true/false value: this is done implicitly)
+
+prompt() is a function that asks user for input
+
+isNan is a method that checks whether somthing is a number or not

@@ -1,85 +1,139 @@
-const defaultResult = 0;
-let currentResult = defaultResult;
-let logEntries = [];
+const Attack_Value = 10;
+const Monster_Attack_Value = 14;
+const Strong_Attack_Value = 17;
+const Heal_value = 20;
+const enteredValue = prompt('Maximum life for you and the monster.', '100')
+const weak_attack = 'attack';
+const strong_attack ='strong_attack';
 
-function getUserNumberInput() {
-    return parseInt(userInput.value);
+
+let chosenMaximumLife = parseInt(enteredValue);
+
+if (isNaN(chosenMaximumLife || chosenMaximumLife <= 0 )) {
+    chosenMaximumLife = 100;
 }
-    
+let currentMonsterHealth = chosenMaximumLife;
+let currentPlayerHealth = chosenMaximumLife;
+let hasBonusLife = true;
 
-function  createAndWriteOutput (operator, resultBeforeCalc, calcNumber) {
-    const calcDescription = `${resultBeforeCalc}  ${operator} ${calcNumber}`;
-    outputResult(currentResult, calcDescription);
-}
 
-function writeToLog(operationIdentifier, previousResult, operationNumber, newResult){
-    const logEntry = {
-        operation: operationIdentifier, 
-        previousResult: previousResult,
-        number: operationNumber,
-        result: newResult
+adjustHealthBars(chosenMaximumLife);
+
+function writeToLog(event, value, monsterHealth, playerHealth) {
+    let logEntry = {
+        event:event, 
+        value: value, 
+        finalMonsterHealth: monsterHealth, 
+        finalPlayerHealth: playerHealth,
     };
-    logEntries.push(logEntry);
-    console.log(logEntries);
+
+    if (event === LOG_EVENT_PLAYER_ATTACK) {
+        logEntry.target = 'Monster';
+    } else if (event === LOG_EVENT_PLAYER_STRONG_ATTACK) {
+        logEntry = {
+            event: event, 
+            value: value, 
+            target: 'Monster',
+            finalMonsterHealth: monsterHealth,
+            finalPlayerHealth: playerHealth
+    };
+    } else if (event = LOG_EVENT_MONSTER_ATTACK){
+            logEntry = {
+                event: event, 
+                value: value, 
+                target: 'Player',
+                finalMonsterHealth: monsterHealth,
+                finalPlayerHealth: playerHealth
+        }
+    } else if (event === LOG_EVENT_PLAYER_HEAL) {
+        logEntry = {
+            event: event, 
+            value: value, 
+            target: 'Player',
+            finalMonsterHealth: monsterHealth,
+            finalPlayerHealth: playerHealth
+    }
+    } else if (event === LOG_EVENT_GAME_OVER){
+        logEntry = {
+            event: event, 
+            value: value, 
+            finalMonsterHealth: monsterHealth,
+            finalPlayerHealth: playerHealth
+    }
+    }    
+    battleLog.push(logEntry);
+}    
+
+const enteredValue = prompt('Maximum life for you and the monster.', '100')
+
+function endRound() {
+    const initialPlayerHealth = currentPlayerHealth;
+    const playerDamage = dealPlayerDamage(Monster_Attack_Value);
+    currentPlayerHealth -= playerDamage;
+
+    if (currentMonsterHealth <= 0 && hasBonusLife) {
+        hasBonusLife = false;
+        removeBonusLife();
+        currentPlayerHealth -= initialPlayerHealth;
+        setPlayerHealth(initialPlayerHealth);
+        alert('You would be dead but the bonus life saved you!');
+    }
+    if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
+        alert('you won!');
+        reset(chosenMaximumLife);
+    } else if ( currentPlayerHealth <= 0 && currentMonsterHealth > 0) {
+        alert ('you lost!');
+        reset(chosenMaximumLife);
+    } else if (currentMonsterHealth < 0 && currentPlayerHealth < 0) {
+        alert('You have a draw!')
+        reset(chosenMaximumLife);
+    }
 }
 
+function reset() {
+    currentPlayerHealth = chosenMaximumLife;
+    currentMonsterHealth = chosenMaximumLife;
+}
 
+function attackMonster(mode) {
+    let maxDamage;
+    if (mode === weak_attack) {
+        maxDamage = Attack_Value;
+    } else if (mode === strong_attack) {
+        maxDamage = Strong_Attack_Value;
+    }
+    const damage = dealMonsterDamage(maxDamage);
+    currentMonsterHealth -= damage;
+    const playerDamage = dealPlayerDamage(Monster_Attack_Value);
+    currentPlayerHealth -= playerDamage;
+}
 
+function attackHandler() {
+   attackMonster('attack');
+   endRound();
+}
 
-function calculateResult (calculationType) {
-    const enteredNumber = getUserNumberInput();
-    if (calculationType !== 'Add' && 
-    calculationType !== 'Subtract' && 
-    calculationType !== 'Multiply' && 
-    calculationType != 'Divide' ||
-    enteredNumber === 0 // you can also have a sytax of !enteredNumber
-    ) {
-        return;
+function strongAttackHandler () {
+    attackMonster('strongAttack');
+    endRound();
+}
+
+function healPlayerHandler() {
+    let healValue;
+    if (currentPlayerHealth >= chosenMaximumLife - Heal_value) {
+        alert('You cant heal to more than your max initial health maximum.')
+        healValue = chosenMaximumLife - currentPlayerHealth;
+    } else {
+        healValue = Heal_value;
     }
 
-    const initialResult = currentResult;
-    let mathOperator;
+    increasePlayerHealth(Heal_value);
+    currentPlayerHealth += Heal_value;
+    endRound();
 
-    if (calculationType === 'Add') {
-        currentResult += enteredNumber;
-        mathOperator = '+';
-    } else if (calculationType === "Subtract") {
-        currentResult -= enteredNumber;
-        mathOperator = '-';
-    }  else if (calculationType === 'Multiply') {
-        currentResult *= enteredNumber;
-        mathOperator = '*';
-    } else if (calculationType === 'Divide') {
-        currentResult /= enteredNumber;
-        mathOperator = '/';
-    }
-
-   
-    createAndWriteOutput(mathOperator, initialResult, enteredNumber )
-    writeToLog(calculationType, initialResult, enteredNumber, currentResult);
 }
 
-function add() {
-    calculateResult('Add')
-}
-
-function subtract() {
-    calculateResult('Subtract')
-}
-
-function multiply() {
-    calculateResult('Multiply')
-}
-
-
-function divide() {
-    calculateResult('Divide')    
-}
-
-addBtn.addEventListener('click', add)
-subtractBtn.addEventListener('click', subtract)
-multiplyBtn.addEventListener('click', multiply)
-divideBtn.addEventListener('click', divide)
-
-
-
+attackBtn.addEventListener('click', attackHandler);
+strongAttackBtn.addEventListener('click', strongAttackHandler)
+healBtn.addEventListener('click', healPlayerHandler)
+logB
