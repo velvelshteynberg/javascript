@@ -36,3 +36,51 @@ Conversion(this converts either implicitly or explicitly) vs coercion (forces to
 prompt() is a function that asks user for input
 
 isNan is a method that checks whether somthing is a number or not
+
+if statment DO NOT HAVE RETURNS = you cant assign an if condition to a constant but there is a way around this
+Ternary operator lets you assing a value to a variable/constant conditionally WITHOUT the if word. e.g. let user = isLogin?(condition) valueIfTrue(must be assigned):valueIfNotTrue(must be assigned)
+You can have nested conditions in a ternary operator
+an expression is something that yields a value
+a statement is just a statment and doesnt yield a value
+
+expression is also statement but statment is not a statment
+
+! = negates 
+
+!! = double bang operator = negate the negation = this can convert any number or string or a fully true/false item and not just truthy/falsy
+to convert anything into a true/false boolean value just excecute !(value)/!!(value)
+
+|| operatorconst name = someUserInput || 'Max'. Usually the or operator returns a true or false value (when in an if condition) but over here it evaluates a || b and return the VALUE of the truth string and NOT a true/false boolean value. You can use this operator to assign default values to variables
+
+by ||. If first condition is truthy then it returns the first one and if the first one is false then it return the second one even if the second is false
+
+&& const name = someUserInput && 'Max'. This will always return the last true/truthy value
+
+by && if the first value is truthy it ALWAYS  returns the second value if it is falsy then it will always return the first one
+
+
+Loops 
+4 main loops in JS: 
+for = executes code a certain amount of times 
+for (let i = 0; i < 3; i++)
+{
+console.log(i);
+}
+There is a variation on this called a do while loop where the condition is checked AFTER the loop is executed
+
+for-of = executes code for every element in an array
+for (const element(array item counter) of array)
+{
+console.log(el);
+}
+
+for-in = executes code for every element in an object
+for (const key in obj) {
+console.log(key);
+console.log(obj[key]);
+}
+
+while = executes code as long as a condition is true
+while (isLoggedIn) {
+…
+}
