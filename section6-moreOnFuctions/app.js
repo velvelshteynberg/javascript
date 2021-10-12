@@ -11,7 +11,7 @@ const COMPUTER_WINS = 'The Computer wins';
 
 let gameIsRunning = false;
 
-const getPlayerChoice = function () {
+const getPlayerChoice = () => {
     const selection = prompt(`${ROCK}, ${PAPER} or ${SCISSORS}`, '').toUpperCase();
     if (selection !== ROCK &&
         selection !== PAPER &&
@@ -23,7 +23,7 @@ const getPlayerChoice = function () {
     return selection
 };
 
-const getComputerChoice = function () {
+const getComputerChoice = () => {
     const randomValue = Math.random();
     if (randomValue < .34) {
         return ROCK;
@@ -34,9 +34,12 @@ const getComputerChoice = function () {
     }
 }
 
-const getWinner = function (cChoice, pChoice) {
-
-    if (cChoice === pChoice) {
+const getWinner = (cChoice, pChoice) => 
+    cChoice === pChoice ? DRAW
+        :   (cChoice === ROCK && pChoice === PAPER) ||
+            (cChoice === PAPER && pChoice === SCISSORS) ||
+            (cChoice === SCISSORS && pChoice === ROCK) ? PLAYER_WINS : COMPUTER_WINS
+    /*if (cChoice === pChoice) {
         return DRAW
     } else if (
         (cChoice === ROCK && pChoice === PAPER) ||
@@ -46,11 +49,11 @@ const getWinner = function (cChoice, pChoice) {
         return PLAYER_WINS;
     } else {
         return COMPUTER_WINS;
-    }
+    }*/
     
-}
 
-startGameBtn.addEventListener('click', function () {
+
+startGameBtn.addEventListener('click',  () => {
     if (gameIsRunning) {
         return;
     }
@@ -59,5 +62,14 @@ startGameBtn.addEventListener('click', function () {
     const playerChoice = getPlayerChoice();
     const computerChoice = getComputerChoice();
     const winner = getWinner(computerChoice, playerChoice);
-    console.log(winner);
+    let message = `You picked ${playerChoice}, computer picked ${computerChoice}, therefore you `;
+    if (winner === DRAW) {
+        message = message + `had a draw.`;
+    } else if (winner === PLAYER_WINS) {
+        message = message + `won.`;
+    } else {
+        message = message + `lost.`;
+    }
+    alert(message);
+    gameIsRunning = false;
 });

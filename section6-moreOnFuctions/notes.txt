@@ -22,3 +22,7 @@ Function declaration/statement is naming the function and not assigning to a var
 Function Expressions (assigning the function to a constant). The constant is hoisted but is set to undefined until the actual definition is ran so therefore the funciton will HAVE TO BE defined before execution 
 
 adding names to functions is always good because this way if you get an error you can see which funciton the browser doesn't like
+
+There are arrow function name = (parameter) => {}. These arrow functions have to be named. If you have no arguments you still have to put ()
+Advantages: 1- if they have only one expression then you can emit the {} and the return key word
+2- if you have one argument you can have a syntax of arg => {...} and if you have one expression then (a) => a otherwise you have to have {} and the return key word
