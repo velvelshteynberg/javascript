@@ -7,11 +7,28 @@ const mode_attack = 'attack';
 const strong_attack ='strong_attack';
 
 
-let chosenMaximumLife = parseInt(enteredValue);
 
-if (isNaN(chosenMaximumLife || chosenMaximumLife <= 0 )) {
-    chosenMaximumLife = 100;
+function getMaxLifeValues() {
+    const enteredValue = prompt('Maximum life for you and the monster.', '100')
+    const parsedValue = parseInt(enteredValue);
+
+    if (isNaN(parsedValue) || parsedValue <= 0) {
+        throw {message: 'Not valid input'};
+    }
+    return parsedValue;
 }
+let chosenMaximumLife;
+
+try {
+    chosenMaximumLife = getMaxLifeValues();
+} catch (error) {
+    chosenMaximumLife = 100;
+    alert('you entered soemthing wrong');
+    throw error;
+} finally {
+    // put in some code for 'clean up' work
+}
+
 let currentMonsterHealth = chosenMaximumLife;
 let currentPlayerHealth = chosenMaximumLife;
 let hasBonusLife = true;
@@ -19,7 +36,7 @@ let hasBonusLife = true;
 adjustHealthBars(chosenMaximumLife);
 
 let battleLog = [];
-
+let lastLoggedEntry = [];
 const LOG_EVENT_PLAYER_ATTACK = 'PLAYER_ATTACK';
 const LOG_EVENT_PLAYER_STRONG_ATTACK = 'PLAYER_STRONG_ATTACK';
 const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
@@ -180,10 +197,14 @@ function printLogHandler() {
         console.log(battleLog[i]);
     }*/
     for (const logEntry of battleLog) {
-        console.log(`#${i}`);
-        for (const key in logEntry) {
+        if (!lastLoggedEntry && lastLoggedEntry !== 0 || lastLoggedEntry < i) {
+            console.log(`#${i}`);
+        for (const key in logEntry) {f
             console.log(key);
             console.log(logEntry[key]);
+        }
+        lastLoggedEntry = i
+        break;
         }
         i++;
     }

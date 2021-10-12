@@ -84,3 +84,10 @@ while = executes code as long as a condition is true
 while (isLoggedIn) {
 …
 }
+
+break; breaks any loop that it is said
+continue; tells the loop to ignore specifically that iteration but to continue the ones afterwards
+
+Usually break; only breaks the loop that it is inside. If you want to break the outer loop based on a certain condition you have to name the outer loop e.g. OuterLoop: and then on the inside of the inside loop you have to say break OuterLoop; and it will break the outside loop too. You can do the same for continue too. This is known as label statements
+
+Error handling = user input errors, network errors. You can throw your own errors to recover gracefully
