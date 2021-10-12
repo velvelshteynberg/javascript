@@ -1,0 +1,64 @@
+Ecmascript is standardized by Ecma international 
+JS evolves
+
+ES5 - has great browser suppot. Only has var to create variables
+
+ES6 (finished in 2015)- has great support from browser. many features avoid 'hacks'. 
+
+Var has always been available. 
+let and const only avaialble from ES6. 
+
+Var allows to create variable in function and in the global scope but let/const use block scope. 
+Block scope means something inside of a block (inside {}). FUnciton scoped means that it can only be accesed inside a function. 
+Var is funciton scoped while let is block scoped. Var should not be used anymore
+
+Another difference is if you declare a variable after console logging it: if its var you'll get undefined (variable is initialized with hoisting but the value is only after conosling it) while with let it'll throw a variable uninitialized error. 
+
+"Conceptually, for example, a strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code"
+with var you can also redeclare the same VARIABLE and not just reassign the value
+
+with var you can skip the word var and the variable will still work
+
+strict mode initialized in ES5. if you add "use strict"; this will tell js not to be forgiving: disabled bad behaviours
+
+you cant use undefined as a variable name with let const and var in strict mode
+
+parsing means the browser reads and loads and execution is executing that code(v8, spiderMonkey)
+
+parse means loading through interpreter and the interpreter hands off the Bytecode to the compiler while the compiler (which is built into the browser) compiles the bytecode into machine code and the machine code executes it onto the screen. 
+
+Existing script isn't recompiled. 
+
+browser has built in api's which you can call in your js
+
+How does the code get executed
+
+The JS engine has the heap and the stack
+The heap sotes data in your systme memory and manages access to it 
+The stack manages your program flow = things are pushed onto the stack for execution. Once things are accompolished the get taken off the stack (they do remain in the heap though). Once everything is executed the stack is empty. 
+Youre able to check the call stack in the sources in the console
+JS is single-threaded = can handle one thing at a time. Call stack helps JS do this. There is something that is called an event loop
+
+
+Primite vs Reference values
+Primitive = string, number, booelans null, undefined, symbol. Stored in the stack.   
+e.g. let name = 'velvel';
+     let userName = name;
+     userName will return velvel
+     name = 'max';
+     userName WILL STILL RETURN VELVEL. The VALUE of the the original name variable is stored in userName and not the address to that value
+
+Reference values= all other objects (objects). Stored in the heap. 
+For reference values in the above example userName will return max and not velvel because the address is stored and not the value
+
+If you make a carbon copy of another object with a spread operator then updating the original will not update the newest object
+
+because objects are reference values therefore p = {age: 1} and p2 = {age: 2} and p === p2 will yield false because the address is different even though the values are excactly the same
+
+Another implication is const array = []; and array.push will work even though its a const because its just storing the address for the information 
+
+
+Garbage collections
+THe garbage collector periodically removes objects without references (objects that you will definitely not be using)
+
+You have to be careful of memory leaks. an object that you don't use anymore

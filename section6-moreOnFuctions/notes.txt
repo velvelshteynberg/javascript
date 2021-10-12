@@ -1,0 +1,24 @@
+Parameters are the names for the things that you then go and pass in the argument e.g. paramater is name argument is 'max', 'velvel'
+
+You can have a function in an object. This is called a method. 
+
+AddeventListener is a method attached to an object
+
+Actually functions really are objects in essence console.dir(function) will give you an entire object in the console.
+
+Functions can be stored in variables. e.g. const name = function(){}
+
+Expressions yield returns for you
+
+An anonymous function is one where it doesnt have a name
+e.g. const name = function (parameter) {
+    console.log(parameter)
+}
+This is an anonymous function because it doesnt have a name. Anonymous functions are not neccesarily linked to variables. Sometimes you need them if you will not need to reuse the code ever. 
+
+
+Function declaration/statement is naming the function and not assigning to a variable. THe function gets hoisted to the top and can be used script-wide even if definition has been set after being called. 
+
+Function Expressions (assigning the function to a constant). The constant is hoisted but is set to undefined until the actual definition is ran so therefore the funciton will HAVE TO BE defined before execution 
+
+adding names to functions is always good because this way if you get an error you can see which funciton the browser doesn't like
