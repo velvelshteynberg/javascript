@@ -1,0 +1,45 @@
+DOM is the document object model (DOM)
+Browser parses the html to create the Dom. other techs can do this too
+
+Document is the root DOM node and provides access to elements
+Window is the documents parent: kind of the tab
+
+tags are parsed into nodes and the browser creates a tree of nodes (objectal representation of the html tags on the proper levels)
+Text nodes are also created out of the text in the html page
+
+special selectors
+document.body => Selects the <body> element node.
+
+document.head => Selects the <head> element node.
+
+document.documentElement => Selects the <html> element node
+
+
+query selector take css selector - returns single elements
+querySelector(all)('.name')  gives you access the first one with class or querySelector('#id') will return with that id
+getElementByID() gives access with that getElementByID
+getElementsByClassName('name') - old way
+getElementsBYTagName() returns all with that tag
+
+
+
+querySelectorAll() getElementsBYTagName() return collections
+This returns non-live
+
+Nodes - objects that make up the DOM
+html tags are element nodes
+text are text nodes
+
+Elements are one type of nodes
+.text_content
+.className
+.style (gives you access to css properties)
+
+
+
+attributes are things you add to the html tag e.g. id, class, value
+Resetting id and class properties change the attribute in the tag while changing the value property does not change the html value tag
+you could do input.setAttribute('name', value). BUt then you dont have live sync because it doesn't reupdate right away
+
+Selecting many elements
+querySelector('li:last-of-type);
