@@ -26,3 +26,15 @@ adding names to functions is always good because this way if you get an error yo
 There are arrow function name = (parameter) => {}. These arrow functions have to be named. If you have no arguments you still have to put ()
 Advantages: 1- if they have only one expression then you can emit the {} and the return key word
 2- if you have one argument you can have a syntax of arg => {...} and if you have one expression then (a) => a otherwise you have to have {} and the return key word
+
+You can set default arguments for function calls function Name (argument1, argument2 = defaultArgument2)
+if you pass an undefined value as an argument the default value will be used. Null and 0 will be kept though and the default will not work
+You can have paramater with defaults as the first/second in the parameter list and it doesn't matter
+
+The rest operator allows you to have a flexible amount of parameters in your function. function name (...number) {
+ etc...
+}
+rest operator has to be the last argument and cant have an argument afterwards. you also cant have 2 different rest operators. ES6 feature
+If you build a function with the function key word then you have the option of not doing ...numbers in the arguments list and instead ommiting that and doing the follow for (const num of arguments(this is a js keyword = arraylike object))
+you can have functions within functions: will be block scoped
+callback functions are those functions that are not called by you but are called by the browser e.g. click event listeneer
