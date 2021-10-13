@@ -38,3 +38,10 @@ rest operator has to be the last argument and cant have an argument afterwards. 
 If you build a function with the function key word then you have the option of not doing ...numbers in the arguments list and instead ommiting that and doing the follow for (const num of arguments(this is a js keyword = arraylike object))
 you can have functions within functions: will be block scoped
 callback functions are those functions that are not called by you but are called by the browser e.g. click event listeneer
+
+
+.bind() is not immediately executed and it must take 2 arguments (this, your argument). All future arguments will be appended as parameters after your argument
+.bind() is used where you want to 'pre configure' a functions argueemtns, when youre not calling the function on your own. 
+
+.apply() and .call() get immediately executed
+
