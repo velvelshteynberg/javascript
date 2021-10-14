@@ -23,7 +23,7 @@ const toggleBackdrop = () => {
 const deleteMovieConfirmation = (id) => {
     let movieIndex = 0;
     for (const movie of movies) {
-        if (movie.id === movieId) {
+        if (movie.id === id) {
             break;
         }
         movieIndex++;
@@ -37,12 +37,13 @@ const deleteMovieConfirmation = (id) => {
 
 const cancelMovieDeletion = () => {
     closeMovieModal();
-    deleteMovieMovdla .classList.add('visible')
+    deleteMovieModal.classList.remove('visible')
 }
 const deleteMovieHandler = (movieId) => {
     const deleteMovieModal = document.getElementById('delete-modal');
     deleteMovieModal.classList.add('visible');
     toggleBackdrop();
+    backdropClickHandler();
     deleteMovieConfirmation(movieId);
 };
 
@@ -79,7 +80,6 @@ const clearMovieInput = () => {
 
 const backdropClickHandler = () => {
     closeMovieModal();
-    cancelMovieDeletion();
 }
 
 const cancelAddMovie = () => {
@@ -120,4 +120,4 @@ const addMovieHandler = () => {
 startAddMovieButton.addEventListener('click', showMovieModal)
 backdrop.addEventListener('click', backdropClickHandler)
 cancelAddMovieButton.addEventListener('click', cancelAddMovie)
-confirmAddMovieButton.addEventListener('click',addMovieHandler)
+confirmAddMovieButton.addEventListener('click', addMovieHandler)
