@@ -1,0 +1,38 @@
+iterable is any object that you can use a for-of loop on. There are iterable objects that arent arrays. 
+Array like have a length and can be accessed with index
+
+const array = new Array(5) gives you an empty array with length 5
+
+array.from('great') will break down each letter to a seperate array item
+.from() converst array-like objects into actual arrays where you'll be able to use all array methods on
+
+you can store any data types or any combination of data types in an array
+
+nested arrays = multi dimensional arrays
+
+.splice can be used to delete items at certain index positions and also to insert items at certain positions. e.g. starting position, how many elements to delete, what to put at the position of the first argument that you selected 
+
+.splice(0) with only one argument will delete everything from index 0
+splice returns those things that you delete
+you could put -1 argument which goes to the back of the array
+
+array.slice() creates a copy of the previous array and then it will not act as a reference but as a carbon copy
+you can also select ranges with slice (starting index, ending index(up to this index but doesnt include this index))
+you can also use -value but both arguments have to be negative
+
+.concat add a new array without adjusting any arrays and adds just the items inside the array to the previous array without modifying it. Returns the new array
+.push would just add a nested array
+
+
+.indexOf returns the index value of the item you're searching for
+it will only return the first occurence
+.lastIndexOf will start searching from the right
+These methods will not work for reference values like ovjects
+
+.find(((person, index, personData) => {
+    return person.name = 'specific name'
+}))
+This will return the entire object (unlike indexOf which only works with primitive values)
+.findIndex(same as .find()) will return the index of that object and not the object itself
+
+.includes(item) will return true if it exist and false if it isnt part of the array. only work for primitive values
