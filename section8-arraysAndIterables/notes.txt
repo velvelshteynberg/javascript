@@ -36,3 +36,18 @@ This will return the entire object (unlike indexOf which only works with primiti
 .findIndex(same as .find()) will return the index of that object and not the object itself
 
 .includes(item) will return true if it exist and false if it isnt part of the array. only work for primitive values
+
+
+forEach could be better than for of because it gives you access to the index value too
+.map returns a new array which is adjusted based on whatever calcualtion you did to each previous array item. in .map you have to specify a return of the object that you have adjusted. The method returns a new array
+.sort() sorts arrays from small to big
+.reverse() sorts arrays from big to small
+.filter() helps reduce items within an array. It expects a return value
+.reduce() returns a reduced array values
+for most of these methods you need to pass functions as their first arguments
+
+.split() is a string method and not an array method. It splits strings into arrays
+.join() by default a comma is inserted between the 2 input types
+
+
+

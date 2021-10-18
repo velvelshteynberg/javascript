@@ -27,3 +27,38 @@ console.log(storedResults)
 console.log(testResults.indexOf(10.99));
 
 console.log(testResults.includes(5.3));*/
+
+const prices = [8,1, 2, 3]
+const tax = 0.19;
+
+/*prices.forEach((price, index, prices) => {
+    const object = { index: index, adjustedPrice: price * (1 + tax) };
+    taxAdjustedPrices.push(object);
+});*/
+
+/*const taxAdjustedPrices = prices.map((price, index, prices) => {
+    const object = { price: (price * (1 + tax)) };
+    return object;
+})*/
+
+/*const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
+
+const sum = originalArray.map((price) => {
+    return price.price;
+}).reduce((previousValue, currentValue) => {
+    return previousValue + currentValue;
+}, 0)
+
+
+console.log(originalArray.filter(object => object.price > 10.98).map(object => object.price).reduce((previousValue, currentValue) => {
+     return previousValue + currentValue;
+}, 0));
+console.log(sum);*/
+
+const data = ' new york; 10.99; 2000'
+const transformedData = data.split(';');
+console.log(transformedData);
+
+const nameFragments = ['velvel', 'shteynberg'];
+console.log(nameFragments.join(' '))
+
