@@ -49,5 +49,6 @@ for most of these methods you need to pass functions as their first arguments
 .split() is a string method and not an array method. It splits strings into arrays
 .join() by default a comma is inserted between the 2 input types
 
-
+spread operator pulls all items out of an array. They must be within an array in other words to copy another array. Spread operator would also work to pull items out of an array and use them as an argument
+spread operators work for objects too but over there the objects as reference values and you're only copying the address and not the actual objects
 

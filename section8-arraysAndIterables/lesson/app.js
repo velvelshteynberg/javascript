@@ -55,10 +55,15 @@ console.log(originalArray.filter(object => object.price > 10.98).map(object => o
 }, 0));
 console.log(sum);*/
 
-const data = ' new york; 10.99; 2000'
+/*const data = ' new york; 10.99; 2000'
 const transformedData = data.split(';');
 console.log(transformedData);
 
 const nameFragments = ['velvel', 'shteynberg'];
 console.log(nameFragments.join(' '))
+
+.reduce()*/
+const nameFragments = ['velvel', 'shteynberg'];
+const otherNameFragments = ['Devora'];
+console.log([...nameFragments]) //this becomes a copy and not a reference value
 
