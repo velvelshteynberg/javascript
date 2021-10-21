@@ -1,0 +1,28 @@
+adding properties and modifying
+person.name = 'velvel'
+
+deleting 
+person.name 
+
+person[name] also accesses name
+
+person[name] looks for the value stored in name
+
+
+object spread operator does not do deep cloning
+object.assign() creates a copy. same as spread operator
+
+object destructuring: get the name of the key and value. Has to be the same name. 
+
+title, is the same as title: title
+
+this globally refers to the window
+person.fullName: if fullName is funciton syntax then this referes to the person 
+                if fullName is arrow function then it referes to the window
+
+.call(oerson) and .apply(person) lets you set the item for this. apply can take more arguments
+
+getters = allows you to name a function as a key value pair and then access it with person.fullName without the extra () usually needed to invoke a function
+setters = allows you to set fullName outside of the object and then reassign the value for firstName and lastName 
+
+
