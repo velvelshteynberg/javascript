@@ -1,0 +1,12 @@
+OOP is an approach of structuring code
+1-work with real life entities (using objects)
+
+Classes define blueprints for objects
+An instance is an object created from an object
+class Product {
+    title = 'default';
+    imageUrl;
+    description;
+    price; 
+}
+new Product(); creates a new instance of this object
