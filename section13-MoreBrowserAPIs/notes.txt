@@ -1,0 +1,20 @@
+The dataset read-only property of the HTMLElement interface provides read/write access to custom data attributes ( data-* ) 
+on elements. It exposes a map of strings ( DOMStringMap ) with an entry for each data-* attribute. 
+Note: The dataset property itself can be read, but not directly written.
+Dataset is used to set custom data
+
+You can select an element to work with by selecting an element and then doing $0.
+x-axis - left to write
+y-axis = top to bottom
+$0.getBoundingClientRect() gives you the measurements of the element
+
+$0.offsetTop/left  gives you the height of how much it is offsetTop
+.clientTop/left gives you the offset of the box without the margins/scrollbars to the outermost point (I think this means the width of the margin)
+.offsetWidth/offsetHeight gives you the width of the entire box
+
+.clientWidth/clientHeight gives you the width/height of the element except for the margin/scrollbars
+.scrollHeight gives you the entire height even the non visible height
+.scrollTop gives you how much you have scrolled
+window.innerWidth/Height gives you the entire width (has drawbacks)
+document.documentElement.clientHeight/width (will deduct all scrollbars)
+HTMLElement doc on MDN explains all of this
