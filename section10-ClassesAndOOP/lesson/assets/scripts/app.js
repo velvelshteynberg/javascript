@@ -12,6 +12,10 @@ class ProductItem {
     this.product = product;
   }
   
+  addToCart() {
+    console.log(this);
+  }
+
   render() {
     const prodEl = document.createElement('li');
     prodEl.className = 'product-item';
@@ -22,9 +26,12 @@ class ProductItem {
           <h2>${this.product.title}</h2>
           <h3> $${this.product.price} </h3>
           <p> ${this.product.description} </p>
+          <button> Add to cart </button>
         </div>
       </div>
     `;
+    const addToCart = prodEl.querySelector('button');
+    addToCart.addEventListener('click', this.addToCart.bind(this.product))
   return prodEl;          
   }
 }
