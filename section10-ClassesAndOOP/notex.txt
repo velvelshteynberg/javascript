@@ -12,8 +12,18 @@ class Product {
 new Product(); creates a new instance of this object
 
 
+
 Static field/property/method - accesible on the class itself without instantiation
 instance field/property/method = accesible only on the instance based on the class
 
 Inheritance is a base class that other items can inherit from
 You have to use the key word extends 'Class name' to inherit from another class
+If you want to inherit from a parent class one of the methods then you need to use the keyword super()
+e.g. fullName() {
+    super(); This will inherit from the base class
+}
+inside a constructor this refers to the object that is being created
+
+
+_method = 'name'
+_ used to be the convention to keep something private but you could get arround that and access it from outside that specific class. 
