@@ -14,3 +14,6 @@ new Product(); creates a new instance of this object
 
 Static field/property/method - accesible on the class itself without instantiation
 instance field/property/method = accesible only on the instance based on the class
+
+Inheritance is a base class that other items can inherit from
+You have to use the key word extends 'Class name' to inherit from another class
