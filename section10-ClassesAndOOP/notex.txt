@@ -27,3 +27,16 @@ inside a constructor this refers to the object that is being created
 
 _method = 'name'
 _ used to be the convention to keep something private but you could get arround that and access it from outside that specific class. 
+
+
+p instanceof Person will return true if p is an instantiated object based on Person
+
+you could create an object by doing const obj = new Object();
+
+all objects have descriptors
+object.getOwnPropertyDescriptors(person) will return the getOwnPropertyDescriptors
+writable means that you can assign a new value to this key
+configurable = you can delete it
+enumareble means you can us a for in loop on it
+object.defineProperty(person, 'name', {configurable: true, enumerable: true, writable:false})
+this is a way to lock properties down

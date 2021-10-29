@@ -1,14 +1,27 @@
 class Course {
+    #price;
     constructor(title, length, price) {
         this.title = title;
         this.length = length;
         this.price = price;
     }
 
+    get price() {
+        return '$' + this.#price;
+    }
+
+    set price(number) {
+        if (number <= 0) {
+            console.log('Can not set price as negative number')
+        } else {
+            this.#price = number;
+        }
+    }
+
     value() {
         const [min] = this.length.split(' ');
         this.min = min;
-        const totalMinutes = (((parseInt(min)) / (this.price)) * 60/100);
+        const totalMinutes = (((parseInt(min)) / (this.#price)) * 60/100);
         const actualMinutes = `${totalMinutes.toFixed(2)} min`;
         console.log(`For every dollar that you paid you will receive ${actualMinutes}  of high quality content`)
     }
@@ -40,15 +53,18 @@ class TheoreticalCourse extends Course {
     
  }
 
-// const course1 = new Course('JS', '100 min', 145.88)
-// const course2 = new Course('ROR', '150 min', 195.88)
-// console.log(course1, course2);
+const course1 = new Course('JS', '100 min', 145.88)
+const course2 = new Course('ROR', '150 min', 195.88)
+course1.price = 55;
+course2.price = 55;
+console.log(course1.price);
+console.log(course2.price);
 // console.log(course1.value(), course1.courseDescription())
 // console.log(course2.value(), course2.courseDescription())
 
 
-const course3 = new PracticalCourse('Intro to React', '167 min', "$999", 18);
-console.log(course3);
-const course4 = new TheoreticalCourse('Learninng Java', '345 minutes', '$4456')
-console.log(course4.publish());
+// const course3 = new PracticalCourse('Intro to React', '167 min', "$999", 18);
+// console.log(course3);
+// const course4 = new TheoreticalCourse('Learninng Java', '345 minutes', '$4456')
+// console.log(course4.publish());
 
