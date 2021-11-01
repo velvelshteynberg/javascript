@@ -1,0 +1,17 @@
+Constructor functions are also blueprints for objects and have properties and methods too
+You can use Constructor functions without being inside of a class. Class is just syntaxical sugar so that
+a this object creation Constructor will act different that other functions (will instantiate an object and return the object)
+Prototypes are connected objects that are fallback objects
+Prototypes are like base classes
+Prototype chain. 
+This all refers to a property call .__proto__ which JS goes to if it cant find a function and continues going to the all __proto__ until it throws an error. 
+
+
+constructor functions have a special property call prototype where you can assign default bahaviours and then that
+gets checked by JS at the first __proto__ level
+
+This is what the extends key word in Classes does: it assigns the proptotype as another object
+
+
+
+
