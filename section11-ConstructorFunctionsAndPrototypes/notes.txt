@@ -12,6 +12,22 @@ gets checked by JS at the first __proto__ level
 
 This is what the extends key word in Classes does: it assigns the proptotype as another object
 
+Summary of __proto__ vs prototype
+const userA = new User();
+userA.__proto__ === User.prototype; // true
+userA.__proto__ === User.__proto__ // false
 
+A constructor function is a function which can be called together with the new keyword to create an object based on it. 
+__proto__  points at the prototype of the object. while prototype points at the prototype object that will be based on any object created based one a certain function 
 
+By classes if you create a method it adds that method to the __proto__ as an optimization (to not have to create a new function for each instantiated object)
+unless you add it in the a contruction function 
+
+For method shorthands (greet() {...}) the method is added to the __proto__
+for property functions (greet = function () {...}) or arrow functions (greet = () => {...}) the function is recreated during each instantiation 
+
+Object.getPrototypeOf(name) will get the prototype of name
+Object.setPrototypeOf (name, {}) // you can override the prototype
+
+Object.create({}) will instantiate a new product
 
