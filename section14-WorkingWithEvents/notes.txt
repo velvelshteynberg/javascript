@@ -1,0 +1,7 @@
+event listener you can do on the html element onclick = 'alert('hello')'- strongly discouraged to use this
+
+
+mouseenter event is when it hovers over an element. relatedtarget property here means the element that the mouse was on before it came onto the button
+
+capturing is from the outside in while bubbling is from the inside outside
+with event listeners the browser will always execute all anscestral event listeners too. This is called event propogation
