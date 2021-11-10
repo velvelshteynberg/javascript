@@ -1,0 +1,10 @@
+pure function always produces the same output and it does not change anything outside of itself
+impure function producs something random that you cant predict
+impure function also changes things outside (side effects)
+pure functions are generally better because you can predict them
+
+factory functions are functions that produce another function
+lexical enviroment
+
+
+recursion means that you can call yourself (the function itself) a couple of times
