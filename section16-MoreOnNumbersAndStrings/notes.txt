@@ -1,0 +1,12 @@
+numbers are stored as 64 bit floating points 
+min_safe_integer/max_safe_integer
+max_value/min_value
+
+.toFixed(2) forces js to 2 decimal places
+by adding a n after that creates a bigInt
+you cant use decimal points for bigInt
+
+isFinite
+ifInfinite 
+
+math object
