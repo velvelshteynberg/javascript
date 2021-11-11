@@ -10,3 +10,9 @@ isFinite
 ifInfinite 
 
 math object
+
+many methods on string prototype
+
+regular expressions are ways to do checks on string to see that they fit a certain criteria
+regex.exec returns an object
+'hello'.match(regex) is another way to do .exec
