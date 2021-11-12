@@ -22,4 +22,41 @@ for (let i = 0; i < 1000000; i++){
 }
 console.log(result);
 
-const promise  = new Promise()
+
+let promis = new Promise((resolve, reject) => {
+  if (!false) {
+  reject('FALSE');
+  } else {
+resolve('SUCCESS');
+  }
+  
+  
+})
+ 
+promis.then(message  => {
+  console.log(message);
+}).catch(message => {
+  console.log(message);
+})
+
+
+const theLocation = new Promise((resolve, reject) => {
+  navigator.geolocation.getCurrentPosition(success => {
+    resolve(success);
+  }, failure => {    
+    reject(failure);
+  });
+})
+
+theLocation
+  .then(message => {
+    console.log(message)
+    return message
+  })
+  .then(message => {
+    return message.timestamp;
+  })
+  .then(message => {
+    console.log(message.toString().length);
+  })
+  .catch(err => console.log(err.message))

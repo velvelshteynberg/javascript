@@ -6,3 +6,5 @@ THe browser sends back a callback once the thing occured
 Message queue is when the browser tells the js engine that whenever it has a moment it should execute something
 The event loop is the thing that checks the stack if its empty and if it is then it pushes tasks from the message queue to execute
 browser controls the event loop
+
+Promise chaining is having multiple promises with .thens chained one to the other
