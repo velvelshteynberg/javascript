@@ -1,0 +1,5 @@
+json is js object notation
+In Json you can only store data and no methods. Property names have to be wrapped in double quotes
+
+stringify converts js data to json data
+parse converts json data to js data
